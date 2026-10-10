@@ -439,18 +439,21 @@ button {
   flex-direction: column;
   gap: 6px;
   flex: 1;
+  min-width: 0;
 }
 
 .product-card-title {
   font-weight: 700;
   color: var(--navy);
   min-height: 42px;
+  overflow-wrap: anywhere;
 }
 
 .product-card-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 8px;
   margin-top: auto;
 }
 
@@ -458,6 +461,7 @@ button {
   font-weight: 800;
   color: var(--navy);
   font-size: 1.05rem;
+  overflow-wrap: anywhere;
 }
 
 /* ---------- Badges / misc ---------- */
@@ -1690,6 +1694,20 @@ button {
   .product-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .product-card-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .product-card-footer .btn {
+    width: 100%;
+    min-width: 0;
+    padding-inline: 10px;
+    white-space: normal;
+    line-height: 1.25;
+  }
+
   .category-grid {
     grid-template-columns: repeat(3, 1fr);
   }
