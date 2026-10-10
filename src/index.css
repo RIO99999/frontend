@@ -260,6 +260,38 @@ button {
   background: var(--navy);
 }
 
+/* Mobile icon navigation in the top bar (no hamburger) — hidden on desktop */
+.nav-icons {
+  display: none;
+}
+
+.nav-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 4px 8px;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.62rem;
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav-icon svg {
+  font-size: 1.35rem;
+}
+
+.nav-icon.active {
+  color: var(--orange);
+}
+
+.nav-icon .cart-badge {
+  top: 0;
+  right: 0;
+}
+
 /* ---------- Hero ---------- */
 .hero {
   background: linear-gradient(120deg, var(--navy) 0%, var(--blue) 100%);
@@ -547,6 +579,17 @@ button {
 .field span {
   font-weight: 600;
   font-size: 0.9rem;
+}
+
+.field-error {
+  color: var(--danger);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.input-error {
+  border-color: var(--danger) !important;
 }
 
 .phone-field {
@@ -1669,25 +1712,19 @@ button {
   }
 
   .nav-links {
-    position: absolute;
-    top: 68px;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-    background: var(--white);
-    padding: 16px 20px;
-    border-bottom: 1px solid var(--border);
     display: none;
   }
 
-  .nav-links.open {
-    display: flex;
+  .hamburger {
+    display: none;
   }
 
-  .hamburger {
+  /* Top bar with icons on phones — no hamburger needed */
+  .nav-icons {
     display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-left: auto;
   }
 
   .hero-inner {
